@@ -3,8 +3,8 @@ let client = mqtt.connect('mqtt://localhost');
 let pushover = require('pushover-notifications');
 
 let push = new pushover( {
-   user: 'uuaypd1aaw6h3xoei12j1zu28gogdu',
-   token: 'aosy7vfwcc1empem5my4zm9v8432e9'
+   user: process.env.PUSH_USER,
+   token: process.env.PUSH_TOKEN
 });
 
 client.on('connect', function() {
